@@ -16,6 +16,8 @@ http.createServer((req, res)=>{
     var uri = url.parse(req.url).pathname;
     var fileName = path.join(process.cwd(), unescape(uri));
     console.log(`Loading ${uri}`);
+    console.log(`Did it actually load?`);
+
     var stats;
     try{
         stats = fs.lstatSync(fileName);
